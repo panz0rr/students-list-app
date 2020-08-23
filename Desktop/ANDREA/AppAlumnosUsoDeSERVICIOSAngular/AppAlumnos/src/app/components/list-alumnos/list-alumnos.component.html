@@ -1,0 +1,23 @@
+<!-- este ngFor llama a la lista igualada al servicio para que muestre los datos -->
+<div class="card" *ngFor="let alumno of listAlumnos; let i = index" style="margin-top: 20px;">
+    <div class="card-header text-center">
+        {{alumno.nombre}} : {{alumno.estado}}
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-4">
+                <button class="btn btn-danger btn-sm float-left"
+                 (click)="updateAlumno(i, 'No aprobado')">No aprobado</button>
+            </div>
+            <div class="col-lg-4">
+                <button class="btn btn-primary btn-sm mx-auto d-block"
+                (click)="updateAlumno(i, 'Aprobado')">Aprobado</button>
+            </div>
+            <div class="col-lg-4">
+                <button class="btn btn-success btn-sm float-right"
+                 (click)="updateAlumno(i, 'Promocionado')">Promocionado</button>
+            </div>
+        </div>
+
+    </div>
+</div>
